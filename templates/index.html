@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Detection</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #video_feed {
+            border: 2px solid green;
+        }
+        .face-box {
+            position: absolute;
+            border: 2px solid red;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Face Detection</h1>
+    <div style="position:relative;">
+        <img id="video_feed" src="{{ url_for('video_feed') }}">
+        <div id="face_boxes"></div>
+    </div>
+</body>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</html>
