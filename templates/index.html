@@ -3,26 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Face Detection</title>
+    <title>Detector de rostro (Abril)</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <style>
+     <style>
+         div{
+            /* position: relative;*/
+             color: violet;
+             display: flex;
+            justify-content: center;
+            align-items: center;
+             overflow: hidden; /* Para asegurarse de que el video no desborde el contenedor */
+
+         }
         #video_feed {
-            border: 2px solid green;
+            border: 2px solid cadetblue;
+            border-radius: 20px;
+
+
         }
-        .face-box {
-            position: absolute;
-            border: 2px solid red;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 5px;
+        h1{
+            text-align: center;
+            color: cadetblue;
+        }
+        body{
+            background-color: azure;
+        }
+        #video-stream {
+            width: 50%; /* Asegúrate de que el video ocupe todo el ancho del contenedor */
+            height: auto;
+             border: 2px solid cadetblue;
+            border-radius: 20px;/* El alto se ajustará automáticamente según el ancho */
         }
     </style>
 </head>
 <body>
-    <h1>Face Detection</h1>
-    <div style="position:relative;">
-        <img id="video_feed" src="{{ url_for('video_feed') }}">
-        <div id="face_boxes"></div>
+    <h1>Detector de rostro propio</h1>
+    <div>
+        <img id="video-stream" src="{{ url_for('video_feed') }}" alt="Video Stream">
     </div>
 </body>
 <script src="{{ url_for('static', filename='script.js') }}"></script>
